@@ -8,6 +8,7 @@ class RecipesViewModel {
         self.recipesService = recipesService
     }
     
+    @Published var isLoading = false
     @Published var recipes: [RecipeModel] = []
     var offset = 0
     let number = 20
@@ -19,6 +20,8 @@ class RecipesViewModel {
         guard !isFetchingRecipes else { return }
         
         isFetchingRecipes = true
+        if offset == 0 { isLoading = true }
+        
         recipesService.loadRecipes(offset: offset, number: number)
             .receive(on: DispatchQueue.main)
             .map { [weak self] in self?.mapRecipes($0) ?? [] }
@@ -26,6 +29,8 @@ class RecipesViewModel {
                 guard let self else { return }
                 
                 self.isFetchingRecipes = false
+                self.isLoading = false
+                
                 switch completion {
                 case .finished:
                     self.offset += self.number
@@ -34,7 +39,9 @@ class RecipesViewModel {
                     // TBD: handle error
                 }
             } receiveValue: { [weak self] recipes in
-                self?.recipes = recipes
+                self?.recipes += recipes
+                print("received recipes", recipes.count)
+                print(self?.recipes.count)
             }
             .store(in: &cancellables)
     }

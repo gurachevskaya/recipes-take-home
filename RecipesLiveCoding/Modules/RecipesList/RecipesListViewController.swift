@@ -36,6 +36,13 @@ class RecipesListViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView()
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        loader.hidesWhenStopped = true
+        return loader
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,13 +53,25 @@ class RecipesListViewController: UIViewController {
     
     private func config() {
         view.addSubview(collectionView)
+        view.addSubview(loader)
+        
         collectionView.clipToEdges(to: view)
+        NSLayoutConstraint.activate([
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupBindings() {
         viewModel.$recipes
             .sink { [weak self] _ in
                 self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$isLoading
+            .sink { [weak self] isLoading in
+                isLoading ? self?.loader.startAnimating() : self?.loader.stopAnimating()
             }
             .store(in: &cancellables)
     }
@@ -73,7 +92,13 @@ extension RecipesListViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("scrolling")
+        let offset = scrollView.contentOffset.y
+        let contentSize = scrollView.contentSize.height
+        let viewHeight = scrollView.frame.height
+        
+        if offset > (contentSize - viewHeight) {
+            viewModel.loadRecipes()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let service = RecipesServiceMock() //RecipesService(network: NetworkHelper())
+        let service = RecipesServiceMock() //RecipesService(network: NetworkHelper()) //RecipesServiceMock()
         let vm = RecipesViewModel(recipesService: service)
         let vc = RecipesListViewController(viewModel: vm)
         window?.rootViewController = UINavigationController(rootViewController: vc)

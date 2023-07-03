@@ -7,94 +7,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EEF252B7-4AED-4DCC-95AF-1E50ADAEBF8C"
+            uuid = "24B13DA8-814C-41A4-8E68-CCEF031F7CD1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipesLiveCoding/Modules/RecipesList/RecipesListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "setupBindings()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24B13DA8-814C-41A4-8E68-CCEF031F7CD1 - 10f3d66a4fe3ff04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecipesLiveCoding.RecipesListViewController.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
+                  moduleName = "RecipesLiveCoding"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gurachevskaya/Documents/study/RecipesLiveCoding/RecipesLiveCoding/Modules/RecipesList/RecipesListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "24B13DA8-814C-41A4-8E68-CCEF031F7CD1 - 10f3d66a4fe3ff04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecipesLiveCoding.RecipesListViewController.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
+                  moduleName = "RecipesLiveCoding"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gurachevskaya/Documents/study/RecipesLiveCoding/RecipesLiveCoding/Modules/RecipesList/RecipesListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1EEC213D-4AAF-438D-BD30-F525D0718CAC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecipesLiveCoding/Modules/RecipesList/RecipesListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2C6CA98A-E900-4972-9E1B-D04CDB2B85F5"
+            uuid = "F05DCE12-8715-4B5C-86D0-70E8D5BB1C05"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipesLiveCoding/Modules/RecipesList/RecipesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "mapRecipes(_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loadRecipes()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2C6CA98A-E900-4972-9E1B-D04CDB2B85F5 - 781a838fbdfc37ba"
+                  uuid = "F05DCE12-8715-4B5C-86D0-70E8D5BB1C05 - c69e3023495d1766"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "RecipesLiveCoding.RecipesViewModel.mapRecipes(Swift.Array&lt;RecipesLiveCoding.RecipeResponseModel&gt;) -&gt; Swift.Array&lt;RecipesLiveCoding.RecipeModel&gt;"
+                  symbolName = "closure #3 (Swift.Array&lt;RecipesLiveCoding.RecipeModel&gt;) -&gt; () in RecipesLiveCoding.RecipesViewModel.loadRecipes() -&gt; ()"
                   moduleName = "RecipesLiveCoding"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gurachevskaya/Documents/study/RecipesLiveCoding/RecipesLiveCoding/Modules/RecipesList/RecipesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  uuid = "2C6CA98A-E900-4972-9E1B-D04CDB2B85F5 - 5b9705c6c0fad4c3"
+                  uuid = "F05DCE12-8715-4B5C-86D0-70E8D5BB1C05 - c69e3023495d1766"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RecipesLiveCoding.RecipeResponseModel) -&gt; RecipesLiveCoding.RecipeModel in RecipesLiveCoding.RecipesViewModel.mapRecipes(Swift.Array&lt;RecipesLiveCoding.RecipeResponseModel&gt;) -&gt; Swift.Array&lt;RecipesLiveCoding.RecipeModel&gt;"
+                  symbolName = "closure #3 (Swift.Array&lt;RecipesLiveCoding.RecipeModel&gt;) -&gt; () in RecipesLiveCoding.RecipesViewModel.loadRecipes() -&gt; ()"
                   moduleName = "RecipesLiveCoding"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gurachevskaya/Documents/study/RecipesLiveCoding/RecipesLiveCoding/Modules/RecipesList/RecipesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "2C6CA98A-E900-4972-9E1B-D04CDB2B85F5 - 5b9705c6c0fad4c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RecipesLiveCoding.RecipeResponseModel) -&gt; RecipesLiveCoding.RecipeModel in RecipesLiveCoding.RecipesViewModel.mapRecipes(Swift.Array&lt;RecipesLiveCoding.RecipeResponseModel&gt;) -&gt; Swift.Array&lt;RecipesLiveCoding.RecipeModel&gt;"
-                  moduleName = "RecipesLiveCoding"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gurachevskaya/Documents/study/RecipesLiveCoding/RecipesLiveCoding/Modules/RecipesList/RecipesViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "96">
                </Location>
             </Locations>
          </BreakpointContent>
