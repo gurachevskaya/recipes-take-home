@@ -52,6 +52,4 @@ class RecipesViewModel {
             RecipeModel(imageURL: recipe.image, name: recipe.title ?? "")
         } ?? []
     }
-    
-    
 }
