@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 extension RecipeCollectionViewCell {
     enum ViewConstants {
@@ -9,8 +10,12 @@ extension RecipeCollectionViewCell {
 class RecipeCollectionViewCell: UICollectionViewCell {
     static let reuseID = "RecipeCollectionViewCell"
     
+    private var cancellable: AnyCancellable?
+    
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -32,8 +37,12 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(with model: RecipeModel) {
-        // TBD: load image
         nameLabel.text = model.name
+        cancellable = ImageLoadingService.shared.downloadImage(from: model.imageURL ?? "")
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] image in
+                self?.imageView.image = image
+            })
     }
     
     // MARK: Private
