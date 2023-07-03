@@ -23,7 +23,6 @@ class RecipesListViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: layout
@@ -74,6 +73,25 @@ class RecipesListViewController: UIViewController {
                 isLoading ? self?.loader.startAnimating() : self?.loader.stopAnimating()
             }
             .store(in: &cancellables)
+        
+        viewModel.$hasError
+            .sink { [weak self] hasError in
+                if hasError {
+                    self?.showError()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func showError() {
+        let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+        let ok  = UIAlertAction(title: "OK", style: .cancel)
+        let retry = UIAlertAction(title: "Retry", style: .default) { _ in
+            self.viewModel.loadRecipes()
+        }
+        alert.addAction(ok)
+        alert.addAction(retry)
+        present(alert, animated: true)
     }
 }
 

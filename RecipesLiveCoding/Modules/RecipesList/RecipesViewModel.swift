@@ -9,7 +9,9 @@ class RecipesViewModel {
     }
     
     @Published var isLoading = false
+    @Published var hasError = false
     @Published var recipes: [RecipeModel] = []
+    
     var offset = 0
     let number = 20
     var isFetchingRecipes = false
@@ -35,8 +37,7 @@ class RecipesViewModel {
                 case .finished:
                     self.offset += self.number
                 case .failure(let error):
-                    print(error)
-                    // TBD: handle error
+                    self.hasError = true
                 }
             } receiveValue: { [weak self] recipes in
                 self?.recipes += recipes
@@ -51,4 +52,6 @@ class RecipesViewModel {
             RecipeModel(imageURL: recipe.image, name: recipe.title ?? "")
         } ?? []
     }
+    
+    
 }
